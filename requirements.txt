@@ -1,10 +1,1 @@
-torch>=2.0.0
-numpy>=1.26.0
-scipy>=1.12.0
-transformers>=4.38.0
-accelerate>=0.27.0
-tqdm>=4.66.0
-pyyaml>=6.0.1
-streamlit>=1.32.0
-matplotlib>=3.8.0
-plotly>=5.18.0
+torch==2.1.2\nnumpy==1.26.4\nscipy==1.12.0\ntransformers==4.38.2\naccelerate==0.27.2\ntqdm==4.66.2\npyyaml==6.0.1\nstreamlit==1.32.2\nmatplotlib==3.8.4\nplotly==5.18.0\n
