@@ -10,6 +10,9 @@
 
 ---
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/a275fa7c-a1e1-48ca-a390-535069fa57b7" />
+
+
 ## 👁️ La Idea
 
 El 6 de abril de 2026, el BOLD Psychedelic Consortium publicó un mega-análisis de referencia en *Nature Medicine* (Girn, Bzdok et al.) identificando una **huella neural común** en cinco psicodélicos serotoninérgicos. Conclusión central: los psicodélicos no disuelven las redes cerebrales — las **reconfiguran**, aplanando la jerarquía predictiva del cerebro y aumentando la conectividad entre sistemas normalmente segregados.
