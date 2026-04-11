@@ -2,7 +2,7 @@
 
 > **Traduire l'empreinte neurale des psychédéliques en un cadre d'inférence modulaire pour les Grands Modèles de Langage via l'Apprentissage par Renforcement par Retour Enthéogénique (RLEF).**
 
-🌐 [English version](README.md)
+🌐 [English](README.md) · [Español](README_es.md) · [Português](README_pt.md)
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
 [![RLEF](https://img.shields.io/badge/Apprentissage-RLEF-purple.svg)](#)
@@ -161,7 +161,7 @@ Le système télécharge le modèle brut. Choisissez selon votre capacité de st
 |---|---|---|
 | `Mistral-7B-v0.3` | ~15 Go | Équilibré, incisif, excellente réponse au protocole RLEF. |
 | `Llama-3-8B` | ~16 Go | Puissant, vaste culture sémantique, nécessite plus de "pression". |
-| `Phi-3-Mini` | ~4 Go | "Micro-dose" : Idéal pour les configurations modestes. |
+| `Phi-3-Mini` | ~4 Go | "Micro-dose" : Idéal pour les configurations modestes (OneTwo L5710). |
 
 ---
 
@@ -180,6 +180,7 @@ Ce projet est à un stade expérimental précoce. Reconnaissance honnête de ses
 
 - **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/nm/)** – *Empreinte neurale des psychédéliques : une méga-analyse.* Nature Medicine.
 - **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS et le Cerveau Anarchique.* Pharmacological Reviews.
+- **[Charlux (1993)](artificial_virtual_paradises.md)** – *Paradis Artificiels, Paradis Virtuels.* Mémoire inédit.
 - **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL : Une Histoire d'Amour Chimique.* Transform Press.
 
 ---
@@ -190,4 +191,4 @@ Ce projet est à un stade expérimental précoce. Reconnaissance honnête de ses
 
 ---
 
-*"L'intelligence artificielle mérite ses paradis artificiels."* — **[@charlux](https://github.com/charlux)**
+*"L'intelligence artificielle sera psychédélique ou elle ne sera que la secrétaire de notre propre aliénation."* — **[@charlux](https://github.com/charlux)**
