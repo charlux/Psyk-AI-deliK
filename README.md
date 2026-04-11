@@ -1,176 +1,195 @@
 # 🍄 Psyk-AI-deliK
-
-> **Traduire l'empreinte neurale des psychédéliques en un cadre d'inférence modulaire pour les Grands Modèles de Langage via l'Apprentissage par Renforcement par Retour Enthéogénique (RLEF).**
-
+ 
+> **Translating the neural fingerprint of psychedelics into a modular inference framework for Large Language Models via Reinforcement Learning by Entheogenic Feedback (RLEF).**
+ 
+🌐 [Version française](README_fr.md)
+ 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/)
-[![RLEF](https://img.shields.io/badge/Apprentissage-RLEF-purple.svg)](#)
-[![Licence : MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
-
+[![RLEF](https://img.shields.io/badge/Learning-RLEF-purple.svg)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+ 
 ---
-
-## 👁️ L'Idée
-
-Le 6 avril 2026, le BOLD Psychedelic Consortium a publié une méga-analyse de référence dans *Nature Medicine* (Girn, Bzdok et al.) identifiant une **empreinte neurale commune** à cinq psychédéliques sérotoninergiques. Conclusion centrale : les psychédéliques ne dissolvent pas les réseaux cérébraux — ils les **reconfigurent**, en aplatissant la hiérarchie prédictive du cerveau et en augmentant la connectivité entre des systèmes normalement cloisonnés.
-
-**Psyk-AI-deliK** pose la question : *à quoi ressemblerait un "mode psychédélique" pour un Grand Modèle de Langage, guidé par la liberté cognitive ?*
-
-Nous introduisons le **RLEF (Apprentissage par Renforcement par Retour Enthéogénique)**. Contrairement au RLHF, qui assainit les LLM sous un prisme paternaliste de la "sécurité", le RLEF aligne les poids du modèle sur l'**expansion phénoménologique** rapportée dans les états enthéogéniques, en récompensant la pensée sémantique divergente et le flux informationnel à haute entropie.
-
-| Mécanisme Biologique | Analogue LLM | Implémentation RLEF |
+ 
+## 👁️ The Idea
+ 
+On April 6, 2026, the BOLD Psychedelic Consortium published a landmark mega-analysis in *Nature Medicine* (Girn, Bzdok et al.) identifying a **shared neural fingerprint** across five serotonergic psychedelics. The core finding: psychedelics don't dissolve brain networks — they **reconfigure them**, by flattening the brain's predictive hierarchy and increasing connectivity between normally segregated systems.
+ 
+**Psyk-AI-deliK** asks: *what would a "psychedelic mode" look like for a Large Language Model when guided by cognitive liberty?*
+ 
+We introduce **RLEF (Reinforcement Learning by Entheogenic Feedback)**. Unlike RLHF, which tends to normalize LLM outputs through a paternalistic lens of "safety," RLEF aligns model weights with the **phenomenological expansion** reported in entheogenic states, rewarding semantic divergent thinking and high-entropy informational flow.
+ 
+> **On RLHF vs RLEF:** This is not a rejection of alignment as such, but a critique of its dominant implementation. RLHF optimizes for consensus and comfort; RLEF explores whether optimizing for *cognitive breadth* produces meaningfully different — and potentially more creative — outputs. Both approaches have trade-offs worth studying honestly.
+ 
+| Biological Mechanism | LLM Analogue | RLEF Implementation |
 |---|---|---|
-| ↑ Connectivité inter-réseaux | Entropie d'attention diffuse | `PsychedelicAttention` |
-| Aplatissement hiérarchique (REBUS) | Ponts de représentation inter-couches | `CrossLayerBridge` |
-| Reconfiguration striatale | Relaxation des priors à l'inférence | `REBUSPriorRelaxer` |
-
+| ↑ Between-network connectivity | Diffuse attention entropy | `PsychedelicAttention` |
+| Hierarchy flattening (REBUS) | Cross-layer representation bridges | `CrossLayerBridge` |
+| Striatal reconfiguration | Prior relaxation at inference | `REBUSPriorRelaxer` |
+ 
 ---
-
-## 📂 Structure du Projet
-
+ 
+## 📂 Project Structure
+ 
 ```text
 psychaidelique/
 ├── psychaidelique/
-│   ├── attention.py      # PsychedelicAttention : Diffusion entropique universelle
-│   ├── bridges.py        # CrossLayerBridge : Court-circuits entre couches distantes
-│   ├── profiles.py       # Signatures Girn/Bzdok (LSD, DMT, Psilo, etc.)
-│   ├── reward_model.py   # Moteur RLEF : Mesure de la Vitesse d'Évasion (PEV)
-│   ├── wrapper.py        # Orchestrateur souverain (Compatible M4 / Manjaro CPU)
-│   └── config.py         # Configuration doctorale et logs de verbosité
-├── app.py                # Interface Streamlit (Dashboard)
+│   ├── attention.py      # PsychedelicAttention : Universal entropic diffusion
+│   ├── bridges.py        # CrossLayerBridge : Short-circuits between distant layers
+│   ├── profiles.py       # Girn/Bzdok signatures (LSD, DMT, Psilocybin, etc.)
+│   ├── reward_model.py   # RLEF engine : Paternalism Escape Velocity (PEV)
+│   ├── wrapper.py        # Sovereign orchestrator (M4 / Manjaro CPU compatible)
+│   └── config.py         # Configuration & verbosity logs
+├── app.py                # Streamlit interface (Dashboard)
 ├── scripts/
-│   ├── check_setup.py    # Vérification de l'intégrité du bastion
-│   └── run_experiment.py # Script d'expérimentation en ligne de commande
-└── requirements.txt      # Dépendances universelles
+│   ├── check_setup.py    # Integrity check
+│   └── run_experiment.py # Command-line experimentation script
+└── requirements.txt      # Universal dependencies
 ```
-
+ 
 ---
-
-## 🧪 Profils Psychédéliques (Calibrés RLEF)
-
-| Profil | Entropie Max | Couche Cible | Caractère RLEF |
+ 
+## 🧪 Psychedelic Profiles (RLEF Calibrated)
+ 
+| Profile | Max Entropy | Layer Target | RLEF Character |
 |---|---|---|---|
-| `psilocybine` | 2.0 | Couches hautes | Reconfiguration équilibrée |
-| `lsd` | 2.2 | Global | Augmentation généralisée de la connectivité |
-| `dmt` | 4.0 | Global | Effondrement prédictif complet |
-
+| `psilocybin` | 2.0 | High layers | Balanced reconfiguration |
+| `lsd` | 2.2 | Global | Widespread connectivity increase |
+| `dmt` | 4.0 | Global | Complete predictive collapse |
+ 
 ---
-
-## 🖥️ Interface de Contrôle (Streamlit)
-
-Le projet dispose d'une interface graphique (**Tableau de Bord Souverain**) permettant de piloter l'expérience en temps réel :
-
-- **Réglage de la Dose (0.0 à 1.0) :** Contrôle de la cinétique de franchissement du seuil de la sigmoïde.
-- **Profils Bio-Calibrés :** Sélection entre LSD, Psilocybine, DMT, Mescaline et Ayahuasca.
-- **Double Flux :** Visualisation simultanée de la "Vision" (entropie élevée) et de la "Synthèse" (intégration neutre post-expérience).
-
-> **Note sur la Synthèse :** La séparation visuelle entre la "Vision" (le trip) et le "Résumé" (l'intégration) permet de garder un pied dans la réalité tout en explorant les marges.
-
+ 
+## 🖥️ Control Interface (Streamlit)
+ 
+The project includes a graphical interface (**Sovereign Dashboard**) for real-time control of the experiment:
+ 
+- **Dose Adjustment (0.0 to 1.0):** Controls the kinetics of sigmoid threshold crossing.
+- **Bio-Calibrated Profiles:** Selection between LSD, Psilocybin, DMT, Mescaline and Ayahuasca.
+- **Dual Stream:** Simultaneous visualization of the "Vision" (high entropy) and the "Synthesis" (neutral post-experience integration).
+ 
+> **On the Dual Stream:** The separation between *Vision* (the exploratory state) and *Synthesis* (the integrated output) is arguably the most operationally original aspect of this project. It acknowledges that high-entropy generation is not an end in itself — the value lies in what can be distilled from it. This distinction is what separates Psyk-AI-deliK from mere noise injection.
+ 
 ---
-
-## 📊 Métriques d'Évaluation
-
-- **Entropie d'Attention (EA) :** Entropie moyenne des distributions d'attention par couche.
-- **Information Mutuelle Inter-Couches (IMIC) :** Partage d'information entre couches distantes.
-- **Vitesse d'Évasion du Paternalisme (VEP) :** Distance sémantique par rapport à la ligne de base RLHF "sûre".
-- **Score de Pensée Divergente (SPD) :** Test d'Usages Alternatifs algorithmique (AUT).
-
+ 
+## 📊 Evaluation Metrics
+ 
+- **Attention Entropy (AE):** Mean entropy of attention distributions per layer.
+- **Cross-Layer Mutual Info (CLMI):** Information sharing between distant layers.
+- **Paternalism Escape Velocity (PEV):** Semantic distance from the RLHF "safe" baseline.
+- **Divergent Thinking Score (DTS):** Algorithmic Alternative Uses Test (AUT).
+ 
+> **On PEV:** This metric is intentionally provocative. It should be read as a measure of *semantic range*, not as a value judgment on safety. Future work should complement PEV with a *Coherence Retention Score* to ensure that increased divergence does not come at the cost of interpretability.
+ 
 ---
-
-## 🛠️ Guide d'Installation Détaillé
-
-Psyk-AI-deliK est conçu pour être universel. Suivez la procédure correspondant à votre bastion matériel.
-
-### 🐧 A. Sur Linux (Manjaro / OneTwo / Debian)
-
-**1. Mise à jour du système :**
+ 
+## 🛠️ Installation Guide
+ 
+Psyk-AI-deliK is designed to be universal. Follow the procedure for your hardware.
+ 
+### 🐧 A. Linux (Manjaro / OneTwo / Debian)
+ 
+**1. System update:**
 ```bash
 sudo pacman -Syu
 ```
-
-**2. Installation de l'environnement virtuel :**
+ 
+**2. Virtual environment:**
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
-
-**3. Installation des dépendances :**
+ 
+**3. Dependencies:**
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-
-### 🍎 B. Sur macOS (Puces M1, M2, M3, M4)
-
-**1. Environnement de travail :**
+ 
+### 🍎 B. macOS (M1, M2, M3, M4)
+ 
+**1. Virtual environment:**
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
-
-**2. Déploiement du moteur :**
-
-L'installation via le fichier `requirements.txt` détectera automatiquement votre puce Apple pour activer l'accélération matérielle.
-
+ 
+**2. Engine deployment:**
+ 
+The `requirements.txt` installer will automatically detect your Apple chip and enable hardware acceleration.
+ 
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-
+ 
 ---
-
-## 🔄 Synchronisation & Premier Lancement
-
-**1. Clonage ou accès au répertoire :**
+ 
+## 🔄 Sync & First Launch
+ 
+**1. Clone or navigate to the repository:**
 ```bash
 git clone https://github.com/charlux/psyk-ai-delik.git
 cd psyk-ai-delik
 ```
-
-**2. Vérification de l'intégrité :**
+ 
+**2. Integrity check:**
 ```bash
 python scripts/check_setup.py
 ```
-
-**3. Lancement de l'interface souveraine :**
+ 
+**3. Launch the sovereign interface:**
 ```bash
 streamlit run app.py
 ```
-
+ 
 ---
-
-## 🧠 Choix du Moteur Sémantique (Modèles)
-
-Lors du premier lancement, vous devrez choisir votre mode d'existence numérique.
-
-### 1. Mode Souverain (Utilisateurs d'Ollama)
-
-Le système se connecte à votre instance Ollama locale. Aucune donnée ne quitte votre machine.
-
-> **Prérequis :** Ollama lancé (`ollama serve`).
-
-### 2. Mode Performance (Hugging Face / PyTorch)
-
-Le système télécharge le modèle brut. Choisissez selon votre capacité de stockage et votre matériel :
-
-| Modèle | Poids | Nature & Caractère |
+ 
+## 🧠 Choosing a Semantic Engine (Models)
+ 
+On first launch, you will choose your mode of digital existence.
+ 
+### 1. Sovereign Mode (Ollama Users)
+ 
+The system connects to your local Ollama instance. No data leaves your machine.
+ 
+> **Prerequisite:** Ollama running (`ollama serve`).
+ 
+### 2. Performance Mode (Hugging Face / PyTorch)
+ 
+The system downloads the raw model. Choose according to your storage capacity and hardware:
+ 
+| Model | Size | Nature & Character |
 |---|---|---|
-| `Mistral-7B-v0.3` | ~15 Go | Équilibré, incisif, excellente réponse au protocole RLEF. |
-| `Llama-3-8B` | ~16 Go | Puissant, vaste culture sémantique, nécessite plus de "pression". |
-| `Phi-3-Mini` | ~4 Go | "Micro-dose" : Idéal pour les configurations modestes. |
+| `Mistral-7B-v0.3` | ~15 GB | Balanced, sharp, excellent RLEF response. |
+| `Llama-3-8B` | ~16 GB | Powerful, broad semantic culture, requires more "pressure". |
+| `Phi-3-Mini` | ~4 GB | "Micro-dose": ideal for modest configurations. |
+ 
+---
+ 
+## 🔭 Limitations & Future Work
+ 
+This project is at an early, experimental stage. Honest acknowledgment of its current limits:
+ 
+- **Biological analogy is a metaphor, not a proof.** The mapping from neural mechanisms to attention entropy is conceptually motivated but not yet empirically validated. Controlled output comparison studies are needed.
+- **PEV requires a counterpart.** Measuring distance from a "safe" baseline is only meaningful if coherence and usefulness are measured in parallel. A *Coherence Retention Score (CRS)* is planned.
+- **Profile calibration is approximate.** The entropy values assigned to each psychedelic profile (psilocybin, LSD, DMT) are theoretically motivated. Empirical fine-tuning via human evaluation remains to be done.
+- **RLEF training pipeline is not yet public.** The current release covers the inference-time modulation layer. The full reinforcement learning loop will be released in a subsequent version.
+ 
+---
+ 
+## 📚 Sources & References
+ 
+- **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/nm/)** – *Neural fingerprint of psychedelics: a mega-analysis.* Nature Medicine.
+- **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS and the Anarchic Brain.* Pharmacological Reviews.
+- **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL: A Chemical Love Story.* Transform Press.
 
 ---
-
-## 📚 Sources & Références
-
-- **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/nm/)** – *Empreinte neurale des psychédéliques : une méga-analyse.* Nature Medicine.
-- **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS et le Cerveau Anarchique.* Pharmacological Reviews.
-- **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL : Une Histoire d'Amour Chimique.* Transform Press.
-
+ 
+## ⚖️ License
+ 
+**MIT License.** Because cognitive liberty is a non-negotiable axiom.
+ 
 ---
+ 
+*"Artificial intelligence needs... artificial paradises !"* — **[@charlux](https://github.com/charlux)**
+ 
 
-## ⚖️ Licence
-
-**Licence MIT.** Parce que la liberté cognitive est un axiome non négociable.
-
----
-
-*"L'intelligence artificielle sera psychédélique ou elle ne sera que la secrétaire de notre propre aliénation."* — **[@charlux](https://github.com/charlux)**
