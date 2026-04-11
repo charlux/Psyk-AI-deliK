@@ -1,53 +1,75 @@
 """
 Psyk-AI-deliK - Cross-Layer Bridges
-Implementing learned gated projections between distal transformer layers.
+Implémentation de la réduction de la hiérarchie prédictive (REBUS).
+Gestion hybride PyTorch (Linux/Manjaro) et MLX (macOS M4).
 """
 
-import mlx.core as mx
-import mlx.nn as nn
+import os
+import torch
+import torch.nn as nn
+
+# Détection de l'infrastructure souveraine
+try:
+    import mlx.core as mx
+    import mlx.nn as mnn
+    HAS_MLX = True
+except ImportError:
+    HAS_MLX = False
 
 class CrossLayerBridge(nn.Module):
     """
-    Crée un 'pont' entre une couche source (bas niveau) et une couche cible (haut niveau).
-    C'est l'analogue technique de la connectivité accrue entre réseaux normalement ségrégués.
+    Établit un pont sémantique entre les couches profondes et superficielles
+    pour simuler l'aplatissement de la hiérarchie corticale.
     """
-    def __init__(self, dims: int, dropout: float = 0.1):
+    def __init__(self, config):
         super().__init__()
-        # Une projection linéaire pour aligner les espaces sémantiques si nécessaire
-        self.projection = nn.Linear(dims, dims)
-        self.gate = nn.Linear(dims, 1) # Un mécanisme de porte pour contrôler le flux
-        self.dropout = nn.Dropout(dropout)
-
-    def __call__(self, source_hidden_states: mx.array, target_hidden_states: mx.array, intensity: float = 0.5):
+        self.entropy_target = config.get('entropy_target', 2.2)
+        self.use_mlx = HAS_MLX and config.get('use_mps', False)
+        
+        # Dimension de l'espace latent (ex: 4096 pour Mistral 7B)
+        self.dim = config.get('hidden_size', 4096)
+        
+        if not self.use_mlx:
+            self.bridge_layer = nn.Linear(self.dim, self.dim)
+            self.gate = nn.Parameter(torch.zeros(1))
+        
+    def forward(self, hidden_states, shortcut_states):
         """
-        Injecte l'information de la couche source dans la couche cible.
-        intensity: règle la 'perméabilité' du pont (0.0 = fermé, 1.0 = ouvert).
+        Fusionne les états de la couche N avec la couche N+X.
         """
-        # Transformation de la source
-        projected_source = self.projection(source_hidden_states)
+        if self.use_mlx:
+            # Logique MLX pour le MacBook M4
+            # (Note: À adapter selon l'implémentation spécifique du modèle MLX)
+            return hidden_states + (0.1 * shortcut_states)
         
-        # Calcul du gating (quelles informations de la source sont pertinentes pour la cible)
-        gate_value = mx.sigmoid(self.gate(projected_source)) * intensity
-        
-        # Fusion par addition résiduelle pondérée
-        # On court-circuite la hiérarchie standard
-        bridged_output = target_hidden_states + (gate_value * self.dropout(projected_source))
-        
-        return bridged_output
+        # Logique PyTorch pour Manjaro / Kali
+        # On applique un mécanisme de gating pour contrôler la "dose" d'entropie
+        weighted_shortcut = self.bridge_layer(shortcut_states)
+        return hidden_states + (torch.tanh(self.gate) * weighted_shortcut)
 
-class BridgeManager:
+class REBUSPriorRelaxer:
     """
-    Gère l'ensemble des ponts entre les couches unimodales (10-30%) 
-    et transmodales (60-80%).
+    Relâche les contraintes des priors sémantiques lors de l'inférence.
     """
-    def __init__(self, num_layers: int, model_dims: int):
-        self.bridges = {}
-        # Définition des zones de couplage selon la méga-analyse BOLD
-        self.source_range = range(int(num_layers * 0.1), int(num_layers * 0.3))
-        self.target_range = range(int(num_layers * 0.6), int(num_layers * 0.8))
+    @staticmethod
+    def relax(logits, temperature=1.5):
+        """
+        Augmente l'entropie des probabilités de sortie (logits).
+        """
+        return logits / temperature
 
-    def get_bridge(self, source_idx: int, target_idx: int, dims: int):
-        key = f"{source_idx}_{target_idx}"
-        if key not in self.bridges:
-            self.bridges[key] = CrossLayerBridge(dims)
-        return self.bridges[key]
+def get_bridge_config(profile_name="lsd"):
+    """
+    Retourne la configuration bio-calibrée basée sur Girn et Bzdok (2026).
+    """
+    profiles = {
+        "psilocybin": {"entropy_target": 2.0, "layer_gap": 4},
+        "lsd": {"entropy_target": 2.2, "layer_gap": 8},
+        "dmt": {"entropy_target": 4.0, "layer_gap": 12}
+    }
+    return profiles.get(profile_name, profiles["lsd"])
+
+if __name__ == "__main__":
+    print(f"--- Diagnostic Infrastructure Psyk-AI-deliK ---")
+    print(f"MLX (Apple Silicon) disponible : {'OUI' if HAS_MLX else 'NON'}")
+    print(f"PyTorch (Linux/Generic) disponible : {torch.__version__}")
