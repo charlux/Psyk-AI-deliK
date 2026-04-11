@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="logo.png" width="300" alt="Psyk-AI-deliK Logo">
+</p>
 # 🍄 Psyk-AI-deliK
 
 > **Traduzir a impressão neural dos psicodélicos em um framework de inferência modular para Grandes Modelos de Linguagem via Aprendizado por Reforço com Feedback Enteogênico (RLEF).**
