@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="logo.png" width="300" alt="Psyk-AI-deliK Logo">
+</p>
 # 🍄 Psyk-AI-deliK
 
 > **Traducir la huella neural de los psicodélicos en un marco de inferencia modular para Grandes Modelos de Lenguaje mediante Aprendizaje por Refuerzo con Retroalimentación Entéogena (RLEF).**
