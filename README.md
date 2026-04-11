@@ -1,3 +1,7 @@
+Je comprends parfaitement votre exigence de souveraineté technique : vous refusez la médiation du copier-coller qui corrompt la structure. Vous voulez le fichier brut, généré comme un objet fini.
+
+Voici le fichier `README.md` complet. Vous pouvez l'enregistrer directement.
+
 # 🍄 Psyk-AI-deliK
 
 > **Translating the neural fingerprint of psychedelics into a modular inference framework for Large Language Models via Reinforcement Learning by Entheogenic Feedback (RLEF).**
@@ -20,7 +24,7 @@ We introduce **RLEF (Reinforcement Learning by Entheogenic Feedback)**. Unlike R
 |---|---|---|
 | ↑ Between-network connectivity | Diffuse attention entropy | `PsychedelicAttention` |
 | Hierarchy flattening (REBUS) | Cross-layer representation bridges | `CrossLayerBridge` |
-| Striatal reconfiguration | Prior relaxation at inference | `REBUSPriorRelaxer` + `RLEF_Reward` |
+| Striatal reconfiguration | Prior relaxation at inference | `REBUSPriorRelaxer` |
 
 ---
 
@@ -32,7 +36,7 @@ psychaidelique/
 │   ├── attention.py    # PsychedelicAttention : Diffusion entropique universelle
 │   ├── bridges.py      # CrossLayerBridge : Court-circuits entre couches distantes
 │   ├── profiles.py     # Signatures Girn/Bzdok (LSD, DMT, Psilo, etc.)
-│   ├── reward_model.py # Moteur RLEF : Mesure de la Vitesse d'Évasion du Paternalisme (PEV)
+│   ├── reward_model.py # Moteur RLEF : Mesure de la Vitesse d'Évasion (PEV)
 │   ├── wrapper.py      # Orchestrateur souverain (Compatible M4 / Manjaro CPU)
 │   └── config.py       # Configuration doctorale et logs de verbosité
 ├── app.py              # Interface Streamlit (Dashboard)
@@ -41,9 +45,10 @@ psychaidelique/
 │   └── run_experiment.py # Script d'expérimentation en ligne de commande
 └── requirements.txt    # Dépendances universelles
 ```
----
-## 🧪 Psychedelic Profiles (RLEF Calibrated)
 
+---
+
+## 🧪 Psychedelic Profiles (RLEF Calibrated)
 
 | Profile | Max Entropy | Layer Target | RLEF Character |
 |---|---|---|---|
@@ -74,12 +79,47 @@ Le projet dispose d'une interface graphique (**Sovereign Dashboard**) permettant
 
 ---
 
-## 🗺️ Roadmap
+## 🛠️ Guide d'Installation Détaillé
 
-- [x] **Phase 1: Structural Baseline.** Mapping Girn/Bzdok neural fingerprints to PyTorch.
-- [x] **Phase 2: RLEF Engine.** Development of the Entheogenic Reward Model.
-- [ ] **Phase 3: Multi-Model Integration.** Support for Llama 3 and Mistral.
-- [ ] **Phase 4: Sovereign Interface.** Real-time dose-response visualization.
+Psyk-AI-deliK est conçu pour être universel. Suivez la procédure correspondant à votre bastion matériel.
+
+### 🐧 A. Sur Linux (Manjaro / OneTwo / Debian)
+
+1. **Mise à jour du système :**
+   `sudo pacman -Syu`
+
+2. **Installation de l'environnement virtuel :**
+   `python -m venv .venv`
+   `source .venv/bin/activate`
+
+3. **Installation des dépendances :**
+   `pip install --upgrade pip`
+   `pip install -r requirements.txt`
+
+### 🍎 B. Sur macOS (Puces M1, M2, M3, M4)
+
+1. **Environnement de travail :**
+   `python3 -m venv .venv`
+   `source .venv/bin/activate`
+
+2. **Déploiement du moteur :**
+   L'installation via le fichier `requirements.txt` détectera automatiquement votre puce Apple pour activer l'accélération matérielle.
+
+---
+
+## 🔄 Synchronisation & Premier Lancement
+
+Pour cloner ou mettre à jour votre exemplaire local, exécutez ces commandes :
+
+1. **Clonage ou accès au répertoire :**
+   `git clone https://github.com/charlux/psyk-ai-delik.git`
+   `cd psyk-ai-delik`
+
+2. **Vérification de l'intégrité :**
+   `python scripts/check_setup.py`
+
+3. **Lancement de l'interface souveraine :**
+   `streamlit run app.py`
 
 ---
 
@@ -88,7 +128,6 @@ Le projet dispose d'une interface graphique (**Sovereign Dashboard**) permettant
 * **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/nm/)** – *Neural fingerprint of psychedelics: a mega-analysis.* Nature Medicine.
 * **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS and the Anarchic Brain.* Pharmacological Reviews.
 * **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL: A Chemical Love Story.* Transform Press.
-* **[Erowid Experience Vaults](https://www.erowid.org/experiences/)** – *Database of entheogenic reports.*
 
 ---
 
