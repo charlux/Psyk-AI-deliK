@@ -123,6 +123,51 @@ Pour cloner ou mettre à jour votre exemplaire local, exécutez ces commandes :
 
 ---
 
+## 🧠 SECTION : CHOIX DU MOTEUR SÉMANTIQUE (À COPIER)
+
+Psyk-AI-deliK n'inclut pas les poids des modèles pour préserver la souveraineté du dépôt. Lors du premier lancement, vous devrez choisir votre mode d'existence numérique :
+
+1. Mode Souverain (Utilisateurs d'Ollama)
+
+Idéal pour ceux qui possèdent déjà une bibliothèque locale.
+Le système se connecte à votre instance Ollama locale. Aucune donnée ne quitte votre machine, aucune duplication de fichiers.
+
+Prérequis : Ollama doit être lancé (ollama serve).
+
+Avantage : Utilisation immédiate de vos modèles déjà téléchargés.
+
+2. Mode Performance (Hugging Face / PyTorch)
+
+Idéal pour une précision maximale et une intégration directe dans le pipeline RLEF.
+Le système télécharge le modèle brut. Choisissez selon votre capacité de stockage et votre matériel :
+
+Modèle
+
+Poids
+
+Nature & Caractère
+
+Mistral-7B-v0.3
+
+~15 Go
+
+Équilibré, incisif, excellente réponse au protocole RLEF.
+
+Llama-3-8B
+
+~16 Go
+
+Puissant, vaste culture sémantique, nécessite plus de "pression".
+
+Phi-3-Mini
+
+~4 Go
+
+"Micro-dose" : Idéal pour les configurations modestes (OneTwo L5710).
+
+---
+
+
 ## 📚 Sources & References
 
 * **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/nm/)** – *Neural fingerprint of psychedelics: a mega-analysis.* Nature Medicine.
