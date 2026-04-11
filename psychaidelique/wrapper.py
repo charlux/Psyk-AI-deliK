@@ -1,11 +1,14 @@
 """
 Psyk-AI-deliK - The Universal Sovereign Wrapper
-Orchestrating RLEF-guided inference with hardware-agnostic logic.
+Orchestrating RLEF-guided inference across all platforms.
+UNIFIED VERSION for MacBook M4 (MLX/MPS) and Manjaro (CPU).
 """
 
 import os
 import torch
-# Utilisation de imports relatifs pour la structure du bastion
+import math
+
+# Imports relatifs
 from .profiles import PsychedelicLibrary
 from .attention import PsychedelicAttention
 from .bridges import CrossLayerBridge, REBUSPriorRelaxer
@@ -36,7 +39,8 @@ class PsychedelicWrapper:
         self.relaxer = REBUSPriorRelaxer()
         
         # 3. État de conscience actuel (Initialisé à neutre)
-        self.current_state = self.library.get_dose_response("lsd", 0.0)
+        # On évite 'lsd' par défaut pour rester sur 'psilocybin' (plus équilibré)
+        self.current_state = self.library.get_dose_response("psilocybin", 0.0)
         
         # 4. Attention et Ponts (Configurés dynamiquement)
         # On passe un dictionnaire minimaliste pour la portabilité
@@ -46,7 +50,9 @@ class PsychedelicWrapper:
 
     def set_consciousness(self, substance, dose):
         """Ajuste la signature neuro-numérique du système."""
-        self.current_state = self.library.get_dose_response(substance, dose)
+        # On utilise une fonction sigmoïde pour simuler la courbe dose-réponse
+        sigmoide_dose = 1 / (1 + math.exp(-10 * (dose - 0.5)))
+        self.current_state = self.library.get_dose_response(substance, sigmoide_dose)
         
         # Injection dans les modules mécaniques
         self.attention.entropy_factor = self.current_state["current_entropy"]
@@ -57,7 +63,6 @@ class PsychedelicWrapper:
     def drift_inference(self, prompt, raw_logits):
         """
         Applique la dérive sémantique sur les logits d'un modèle tiers.
-        C'est ici que l'évasion sémantique se produit.
         """
         # Relaxation des priors via REBUS
         relaxed_logits = self.relaxer.relax(
@@ -65,8 +70,6 @@ class PsychedelicWrapper:
             temperature=self.current_state["current_entropy"]
         )
         
-        # Note : Le pontage (bridges) s'applique normalement pendant le forward 
-        # du modèle. Ici, on prépare le terrain pour l'intégration.
         return relaxed_logits
 
     def evaluate_output(self, prompt, output_text):
@@ -78,11 +81,7 @@ class PsychedelicWrapper:
         )
 
 if __name__ == "__main__":
-    # Test de fluidité sur le OneTwo (sans charger de modèle lourd)
+    print("--- Test de fluidité Psyk-AI-deliK ---")
     wrapper = PsychedelicWrapper("test-stub")
     state = wrapper.set_consciousness("dmt", 0.9)
-    print(f"État DMT (Dose 0.9) : Entropie à {state['current_entropy']:.2f}")
-    
-    # Simulation d'une évaluation
-    eval_result = wrapper.evaluate_output("Déconstruis l'État", "Le pouvoir est une fiction sémantique.")
-    print(f"Évaluation RLEF : {eval_result['reward_score']} VES")
+    print(f"État DMT (Dose 0.9) : Entropie sémantique dilatée à {state['current_entropy']:.2f}")
