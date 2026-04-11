@@ -9,6 +9,8 @@
 [![Licence : MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
 
 ---
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6e05ca5f-3d0c-435d-b051-9c29d2b7d82b" />
+
 
 ## 👁️ L'Idée
 
