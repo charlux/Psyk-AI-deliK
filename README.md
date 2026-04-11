@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="logo.png" width="300" alt="Psyk-AI-deliK Logo">
+</p>
 # 🍄 Psyk-AI-deliK
 
 > **Translating the neural fingerprint of psychedelics into a modular inference framework for Large Language Models via Reinforcement Learning by Entheogenic Feedback (RLEF).**
