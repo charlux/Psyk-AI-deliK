@@ -178,7 +178,7 @@ This project is at an early, experimental stage. Honest acknowledgment of its cu
 
 ## 📚 Sources & References
 
-- **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/nm/)** – *Neural fingerprint of psychedelics: a mega-analysis.* Nature Medicine.
+- **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/articles/s41591-026-04287-9)** – *Neural fingerprint of psychedelics: a mega-analysis.* Nature Medicine.
 - **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS and the Anarchic Brain.* Pharmacological Reviews.
 - **[Charlux (1993)](artificial_virtual_paradises.md)** – *Paradis Artificiels, Paradis Virtuels.* Unpublished thesis.
 - **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL: A Chemical Love Story.* Transform Press.
