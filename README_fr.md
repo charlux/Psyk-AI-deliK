@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="logo.png" width="300" alt="Psyk-AI-deliK Logo">
+</p>
 # 🍄 Psyk-AI-deliK
 
 > **Traduire l'empreinte neurale des psychédéliques en un cadre d'inférence modulaire pour les Grands Modèles de Langage via l'Apprentissage par Renforcement par Retour Enthéogénique (RLEF).**
