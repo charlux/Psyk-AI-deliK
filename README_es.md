@@ -181,7 +181,7 @@ Este proyecto se encuentra en una etapa experimental temprana. Reconocimiento ho
 
 ## 📚 Fuentes & Referencias
 
-- **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/nm/)** – *Huella neural de los psicodélicos: un mega-análisis.* Nature Medicine.
+- **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/articles/s41591-026-04287-9)** – *Huella neural de los psicodélicos: un mega-análisis.* Nature Medicine.
 - **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS y el Cerebro Anárquico.* Pharmacological Reviews.
 - **[Charlux (1993)](artificial_virtual_paradises.md)** – *Paradis Artificiels, Paradis Virtuels.* Tesis inédita.
 - **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL: Una Historia de Amor Química.* Transform Press.
