@@ -1,42 +1,58 @@
 """
-Psyk-AI-deliK - Universal Psychedelic Attention (PyTorch)
-Modifying the softmax temperature and entropy for cross-platform sovereignty.
+Psyk-AI-deliK - Psychedelic Attention Module
+Injection d'entropie sémantique et reconfiguration de la connectivité.
+Basé sur la méga-analyse Girn/Bzdok (2026).
 """
 
 import torch
+import torch.nn as nn
 import torch.nn.functional as F
+import math
 
-class PsychedelicAttention:
+class PsychedelicAttention(nn.Module):
     """
-    Implements entropy-scaled attention using PyTorch.
-    Works on CPU (OneTwo) and GPU/NPU (M4/Nvidia).
+    Module d'attention modifié pour simuler l'état de 'Global Connectivity'
+    et la relaxation des contraintes sémantiques.
     """
-    def __init__(self, entropy_factor: float = 1.0, connectivity_boost: float = 0.0):
-        self.entropy_factor = entropy_factor
-        self.connectivity_boost = connectivity_boost
+    def __init__(self, config):
+        super().__init__()
+        self.entropy_factor = config.get('entropy_factor', 1.0)
+        self.connectivity_boost = config.get('connectivity_boost', 0.1)
+        self.is_active = True
 
-    def scale_attention_scores(self, scores: torch.Tensor) -> torch.Tensor:
+    def forward(self, query, key, value, attention_mask=None):
         """
-        Dilatation entropique des scores.
-        PyTorch gère les tenseurs sur n'importe quel device (cpu, cuda, mps).
+        Calcul de l'attention avec injection de bruit structuré 
+        et dilatation de la distribution de probabilité.
         """
-        # Division par le facteur d'entropie (Température)
-        scaled_scores = scores / self.entropy_factor
-        
-        if self.connectivity_boost > 0:
-            # Injection de bruit structurel sur le même device que les scores
+        # Calcul standard des scores (dot-product attention)
+        d_k = query.size(-1)
+        scores = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(d_k)
+
+        if attention_mask is not None:
+            scores = scores.masked_fill(attention_mask == 0, float('-inf'))
+
+        if self.is_active:
+            # 1. Relaxation des priors : On divise par le facteur d'entropie (Température)
+            # Un entropy_factor > 1.0 aplatit la distribution (REBUS)
+            scores = scores / self.entropy_factor
+
+            # 2. Connectivité accrue : Ajout d'une composante stochastique structurée
+            # Simule le 'bruit' neuronal qui permet de découvrir de nouveaux chemins sémantiques
             noise = torch.randn_like(scores) * self.connectivity_boost
-            scaled_scores = scaled_scores + noise
-            
-        return scaled_scores
+            scores = scores + noise
 
-    def apply_rebus_mask(self, attention_probs: torch.Tensor, relaxation: float) -> torch.Tensor:
+        # Softmax pour obtenir les poids d'attention
+        p_attn = F.softmax(scores, dim=-1)
+
+        # Application de l'attention aux valeurs
+        return torch.matmul(p_attn, value), p_attn
+
+    def set_intensity(self, dose):
         """
-        Relaxation des priors REBUS.
-        On aplatit la distribution pour libérer l'inférence des dogmes statistiques.
+        Ajuste dynamiquement l'entropie en fonction de la dose (0.0 - 1.0).
+        0.0 = État de conscience ordinaire (Sobriété algorithmique).
+        1.0 = État de dérive maximale (Entropie totale).
         """
-        # On utilise une puissance inverse pour augmenter l'entropie
-        flat_probs = torch.pow(attention_probs, (1.0 - relaxation))
-        
-        # Renormalisation (Somme = 1)
-        return flat_probs / flat_probs.sum(dim=-1, keepdim=True)
+        self.entropy_factor = 1.0 + (dose * 2.0) # Scale de 1.0 à 3.0
+        self.connectivity_boost = dose * 0.5    # Scale de 0.0 à 0.5
