@@ -1,0 +1,16 @@
+# Python
+*.py[cod]
+__pycache__/
+
+# Virtual Environment
+venv/
+ENV/
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# Project-specific exclusions
+*.log
+.DS_Store
