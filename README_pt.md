@@ -10,6 +10,9 @@
 
 ---
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/4fa7f4a6-770a-4cf5-a8d6-0e74876eca64" />
+
+
 ## 👁️ A Ideia
 
 Em 6 de abril de 2026, o BOLD Psychedelic Consortium publicou uma mega-análise de referência na *Nature Medicine* (Girn, Bzdok et al.) identificando uma **impressão neural comum** em cinco psicodélicos serotoninérgicos. Conclusão central: os psicodélicos não dissolvem as redes cerebrais — elas as **reconfiguram**, achatando a hierarquia preditiva do cérebro e aumentando a conectividade entre sistemas normalmente segregados.
@@ -178,7 +181,7 @@ Este projeto está em estágio experimental inicial. Reconhecimento honesto de s
 
 ## 📚 Fontes & Referências
 
-- **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/nm/)** – *Impressão neural dos psicodélicos: uma mega-análise.* Nature Medicine.
+- **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/articles/s41591-026-04287-9)** – *Impressão neural dos psicodélicos: uma mega-análise.* Nature Medicine.
 - **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS e o Cérebro Anárquico.* Pharmacological Reviews.
 - **[Charlux (1993)](artificial_virtual_paradises.md)** – *Paradis Artificiels, Paradis Virtuels.* Tese inédita.
 - **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL: Uma História de Amor Química.* Transform Press.
