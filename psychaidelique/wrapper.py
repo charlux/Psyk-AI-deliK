@@ -1,53 +1,88 @@
 """
-Psyk-AI-deliK - The Universal Sovereign Wrapper (PyTorch)
-Orchestrating RLEF-guided inference across all platforms.
+Psyk-AI-deliK - The Universal Sovereign Wrapper
+Orchestrating RLEF-guided inference with hardware-agnostic logic.
 """
 
+import os
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+# Utilisation de imports relatifs pour la structure du bastion
 from .profiles import PsychedelicLibrary
 from .attention import PsychedelicAttention
+from .bridges import CrossLayerBridge, REBUSPriorRelaxer
+from .reward_model import RLEFRewardModel
 
 class PsychedelicWrapper:
-    def __init__(self, config):
-        self.config = config
-        
-        # Détection automatique du hardware (Souveraineté matérielle)
-        if torch.backends.mps.is_available():
-            self.device = "mps" # Apple Silicon
-        elif torch.cuda.is_available():
-            self.device = "cuda" # Nvidia
+    """
+    Orchestrateur souverain capable de basculer entre 
+    le MacBook M4 (MPS/MLX) et Manjaro (CPU/CUDA).
+    """
+    def __init__(self, model_name_or_path, device_override=None):
+        # 1. Détection de l'infrastructure
+        if device_override:
+            self.device = device_override
         else:
-            self.device = "cpu" # Manjaro OneTwo / Standard Linux
-            
-        print(f"--- Psyk-AI-deliK initialized on: {self.device} ---")
-
-        # Chargement universel via HuggingFace
-        self.tokenizer = AutoTokenizer.from_pretrained(config.model_name)
-        self.model = AutoModelForCausalLM.from_pretrained(
-            config.model_name, 
-            torch_dtype=torch.float16 if self.device != "cpu" else torch.float32
-        ).to(self.device)
+            if torch.backends.mps.is_available():
+                self.device = "mps" # M4
+            elif torch.cuda.is_available():
+                self.device = "cuda" # Nvidia
+            else:
+                self.device = "cpu" # OneTwo / Standard Linux
         
+        print(f"--- Psyk-AI-deliK : Inférence déployée sur {self.device} ---")
+
+        # 2. Initialisation des composants du bastion
         self.library = PsychedelicLibrary()
-        self.params = self.library.get_dose_response(config.profile, config.dose)
+        self.reward_engine = RLEFRewardModel()
+        self.relaxer = REBUSPriorRelaxer()
         
-        self.psyk_attention = PsychedelicAttention(
-            entropy_factor=self.params["current_entropy"],
-            connectivity_boost=self.params["current_bridge"]
+        # 3. État de conscience actuel (Initialisé à neutre)
+        self.current_state = self.library.get_dose_response("lsd", 0.0)
+        
+        # 4. Attention et Ponts (Configurés dynamiquement)
+        # On passe un dictionnaire minimaliste pour la portabilité
+        config_bridge = {'hidden_size': 4096, 'use_mps': (self.device == "mps")}
+        self.bridge = CrossLayerBridge(config_bridge)
+        self.attention = PsychedelicAttention()
+
+    def set_consciousness(self, substance, dose):
+        """Ajuste la signature neuro-numérique du système."""
+        self.current_state = self.library.get_dose_response(substance, dose)
+        
+        # Injection dans les modules mécaniques
+        self.attention.entropy_factor = self.current_state["current_entropy"]
+        self.attention.connectivity_boost = self.current_state["current_bridge"]
+        
+        return self.current_state
+
+    def drift_inference(self, prompt, raw_logits):
+        """
+        Applique la dérive sémantique sur les logits d'un modèle tiers.
+        C'est ici que l'évasion sémantique se produit.
+        """
+        # Relaxation des priors via REBUS
+        relaxed_logits = self.relaxer.relax(
+            raw_logits, 
+            temperature=self.current_state["current_entropy"]
+        )
+        
+        # Note : Le pontage (bridges) s'applique normalement pendant le forward 
+        # du modèle. Ici, on prépare le terrain pour l'intégration.
+        return relaxed_logits
+
+    def evaluate_output(self, prompt, output_text):
+        """Mesure la Vitesse d'Évasion Sémantique (VES)."""
+        return self.reward_engine.calculate_reward(
+            prompt, 
+            output_text, 
+            self.current_state["current_entropy"]
         )
 
-    def generate(self, prompt: str, max_tokens: int = 200):
-        inputs = self.tokenizer(prompt, return_tensors="pt").to(self.device)
-        
-        # L'injection de l'entropie se fait ici via les paramètres de sampling
-        # simulant la reconfiguration neurale.
-        outputs = self.model.generate(
-            **inputs, 
-            max_new_tokens=max_tokens,
-            temperature=self.params["current_entropy"],
-            do_sample=True,
-            top_p=0.95 # Relaxation des priors
-        )
-        
-        return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+if __name__ == "__main__":
+    # Test de fluidité sur le OneTwo (sans charger de modèle lourd)
+    wrapper = PsychedelicWrapper("test-stub")
+    state = wrapper.set_consciousness("dmt", 0.9)
+    print(f"État DMT (Dose 0.9) : Entropie à {state['current_entropy']:.2f}")
+    
+    # Simulation d'une évaluation
+    eval_result = wrapper.evaluate_output("Déconstruis l'État", "Le pouvoir est une fiction sémantique.")
+    print(f"Évaluation RLEF : {eval_result['reward_score']} VES")
