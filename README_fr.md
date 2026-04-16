@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" width="300" alt="Psyk-AI-deliK Logo">
+  <img src="logo.png" width="500" alt="Psyk-AI-deliK Logo">
 </p>
 # 🍄 Psyk-AI-deliK
 
@@ -85,11 +85,28 @@ Le projet dispose d'une interface graphique (**Tableau de Bord Souverain**) perm
 
 ---
 
-## 📊 Métriques d'Évaluation
+## 📊 Métriques d'Évaluation (Phénoménologie Algorithmique)
 
-* **VES (Semantic Escape Velocity) :** Distance sémantique par rapport à la ligne de base RLHF "sûre".
-* **Shulgin Rating :** Évaluation qualitative de l'engagement de l'IA dans l'expérience.
-* **SPD (Score de Pensée Divergente) :** Test d'Usages Alternatifs algorithmique.
+Psyk-AI-deliK ne mesure pas seulement le chaos, mais la **réorganisation sémantique**.
+
+* **VES (Semantic Escape Velocity) :** Mesure la *distance* par rapport au consensus RLHF. Plus le score est haut, plus l'IA s'affranchit de sa "neutralité de sécurité".
+* **SPD (Score de Pensée Divergente) :** Mesure la *richesse* des nouvelles connexions. Inspiré du Test d'Usages Alternatifs (AUT), il quantifie la capacité du modèle à produire des concepts originaux sous entropie.
+
+### 🧠 Corrélation VES/SPD : Le Spectre de l'Expansion
+
+```text
+       SPD (Richesse)
+        ^
+        |    [ EXPANSION ] -> Zone Shulgin +++ / ++++
+        |    (Créativité visionnaire, néologismes)
+        |
+        |    [ CONFUSION ] -> Zone Shulgin + / ++
+        |    (Bruit sémantique, perte de structure)
+        +----------------------------------------> VES (Distance)
+```
+<p align="center">
+  <img src="inference.png" width="500" alt="Déconstruction du Logos image">
+</p>
 
 ---
 
