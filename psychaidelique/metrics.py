@@ -10,8 +10,6 @@ References:
 """
 
 import math
-import torch
-import numpy as np
 from typing import Optional
 
 
@@ -23,7 +21,8 @@ from typing import Optional
 # ---------------------------------------------------------------------------
 
 def compute_attention_entropy(
-    attentions: tuple[torch.Tensor, ...],
+
+  attentions: tuple[torch.Tensor, ...],
     layer_group: Optional[str] = "all",
 ) -> dict:
     """
@@ -33,6 +32,8 @@ def compute_attention_entropy(
     Returns:
         dict with per-layer and mean entropy
     """
+    import torch  
+    import numpy as np
     n_layers = len(attentions)
     slices = {
         "early": range(0, n_layers // 3),
