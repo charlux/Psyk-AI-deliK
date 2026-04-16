@@ -38,6 +38,8 @@ Nous introduisons le **RLEF (Apprentissage par Renforcement par Retour Enthéog�
 ```text
 psychaidelique/
 ├── psychaidelique/
+│   ├── reward_model.py   # La logique RLEF ($R = PEV + AE + ...$)
+│   ├── trainer.py        # Pour l'entraînement des LoRA (Paradigme HF+PEFT)
 │   ├── attention.py      # PsychedelicAttention : Diffusion entropique universelle
 │   ├── bridges.py        # CrossLayerBridge : Court-circuits entre couches
 │   ├── profiles.py       # Signatures Girn/Bzdok (LSD, DMT, Psilo, etc.)
@@ -110,6 +112,30 @@ Psyk-AI-deliK ne mesure pas seulement le chaos, mais la **réorganisation séman
 
 ---
 
+## 🔬 Architecture RLEF (Reinforcement Learning from Experience Feedback)
+
+Le projet a évolué d'une simple modulation d'inférence vers un paradigme de **neuro-informatique computationnelle**. L'implémentation actuelle repose sur une boucle d'entraînement **RLEF** utilisant des adaptateurs **LoRA** et l'algorithme de gradient **REINFORCE**.
+
+### 1. Le Modèle de Récompense Chimiométrique
+Plutôt que des métriques de diversité textuelle classiques, nous utilisons un signal de récompense $R$ ancré dans la littérature de neuro-imagerie (notamment les travaux de **Girn, Bzdok et al., 2026**). Chaque profil de molécule (Psilocybine, LSD, DMT) correspond à une signature spécifique de poids appliqués à quatre piliers fondamentaux :
+
+* **PEV (Psychedelic Escape Velocity)** : Mesure la divergence sémantique par rapport à la norme (baseline sobre) via la distance cosinus d'embeddings (*Sentence-BERT*). C'est la quantification de l'évasion du puits de gravité sémantique institutionnel.
+* **AE (Attention Entropy)** : Entropie de Shannon appliquée aux distributions d'attention. Elle mesure la "démocratisation" du traitement de l'information entre les couches, analogue à la désintégration du réseau par défaut (DMN).
+* **CLMI (Cross-Layer Mutual Information)** : Mesure l'information mutuelle entre couches distantes. C'est le corrélat computationnel du *flattening* (aplatissement) hiérarchique décrit dans la théorie **REBUS**.
+* **CRS (Coherence Retention Score)** : Garde-fou basé sur la perplexité relative, garantissant que l'expansion de conscience ne sacrifie pas la propriété de soi et la capacité de transmission. Le calcul du CRSs'appuie sur les travaux de Tay et al. (2020) sur l'efficacité des Transformers.
+
+### 2. Pipeline de Training & Inférence
+Le système s'articule désormais autour de deux moteurs :
+* **Moteur de Recherche (HF + PEFT)** : Pour l'entraînement d'adaptateurs LoRA spécifiques via `trainer.py`.
+* **Moteur Souverain (Ollama)** : Pour une inférence locale, rapide et décentralisée, préservant l'autonomie totale des données de l'utilisateur.
+
+### 3. Dual-Stream Vision/Synthesis
+Chaque sollicitation du système (`full_run()`) génère désormais deux flux parallèles :
+1.  **Vision** : L'output brut de l'état modifié (haute entropie).
+2.  **Synthesis** : L'intégration sémantique sobre servant de référence analytique.
+
+---
+
 ## 🛠️ Installation & Lancement (Apple Silicon M4)
 
 ### 1. Cloner et préparer l'environnement
@@ -144,10 +170,16 @@ source venv/bin/activate && streamlit run app.py
 
 ## 📚 Sources & Références
 
+### 🧠 Neuro-imagerie & Phénoménologie
 * **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/articles/s41591-026-04287-9)** – *Neural footprint of psychedelics.* Nature Medicine.
-* **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS and the Anarchic Brain.*
-* **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL: A Chemical Love Story.*
+* **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS and the Anarchic Brain.* Pharmacological Reviews.
+* **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL: A Chemical Love Story.* Transform Press.
 * **[Charlux (1993)](artificial_virtual_paradises.md)** – *Artificial Paradises, Virtual Paradises.*
+
+### 🤖 Fondations Machine Learning (RLEF/LoRA)
+* **[Hu, E. J., et al. (2021)](https://arxiv.org/abs/2106.09685)** – *LoRA: Low-Rank Adaptation of Large Language Models.* (Base du pipeline d'entraînement des adaptateurs).
+* **[Williams, R. J. (1992)](https://link.springer.com/article/10.1007/BF00992696)** – *Simple statistical gradient-following algorithms for connectionist reinforcement learning.* (Algorithme REINFORCE utilisé pour le signal de récompense).
+* **[Tay, Y., et al. (2020)](https://arxiv.org/abs/2011.04006)** – *Long Range Arena: A Benchmark for Efficient Transformers.* (Justification du calcul de l'entropie d'attention sur les séquences longues).
 
 ---
 
