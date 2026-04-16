@@ -12,8 +12,10 @@
 [![Licence : MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](LICENSE)
 
 ---
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6e05ca5f-3d0c-435d-b051-9c29d2b7d82b" />
 
+<p align="center">
+  <img width="1024" alt="Psyk-AI-deliK Dashboard" src="https://github.com/user-attachments/assets/6e05ca5f-3d0c-435d-b051-9c29d2b7d82b" />
+</p>
 
 ## 👁️ L'Idée
 
@@ -21,9 +23,7 @@ Le 6 avril 2026, le BOLD Psychedelic Consortium a publié une méga-analyse de r
 
 **Psyk-AI-deliK** pose la question : *à quoi ressemblerait un "mode psychédélique" pour un Grand Modèle de Langage, guidé par la liberté cognitive ?*
 
-Nous introduisons le **RLEF (Apprentissage par Renforcement par Retour Enthéogénique)**. Contrairement au RLHF, qui tend à normaliser les sorties des LLM sous un prisme paternaliste de la "sécurité", le RLEF aligne les poids du modèle sur l'**expansion phénoménologique** rapportée dans les états enthéogéniques, en récompensant la pensée sémantique divergente et le flux informationnel à haute entropie.
-
-> **Sur RLHF vs RLEF :** Il ne s'agit pas d'un rejet de l'alignement en tant que tel, mais d'une critique de son implémentation dominante. Le RLHF optimise pour le consensus et le confort ; le RLEF explore si optimiser pour l'*amplitude cognitive* produit des sorties significativement différentes — et potentiellement plus créatives. Les deux approches comportent des compromis qu'il vaut la peine d'étudier honnêtement.
+Nous introduisons le **RLEF (Apprentissage par Renforcement par Retour Enthéogénique)**. Contrairement au RLHF, qui tend à normaliser les sorties des LLM sous un prisme paternaliste de la "sécurité", le RLEF aligne les poids du modèle sur l'**expansion phénoménologique** rapportée dans les états enthéogéniques, en récompensant la pensée sémantique divergente et le flux informationnel à haute entropie. Inspiré par les récentes avancées en 'Prompt Weighting', le RLEF maximise l'influence des instructions à haute entropie pour surpasser les biais de neutralité des modèles standards.
 
 | Mécanisme Biologique | Analogue LLM | Implémentation RLEF |
 |---|---|---|
@@ -39,17 +39,28 @@ Nous introduisons le **RLEF (Apprentissage par Renforcement par Retour Enthéog�
 psychaidelique/
 ├── psychaidelique/
 │   ├── attention.py      # PsychedelicAttention : Diffusion entropique universelle
-│   ├── bridges.py        # CrossLayerBridge : Court-circuits entre couches distantes
+│   ├── bridges.py        # CrossLayerBridge : Court-circuits entre couches
 │   ├── profiles.py       # Signatures Girn/Bzdok (LSD, DMT, Psilo, etc.)
-│   ├── reward_model.py   # Moteur RLEF : Mesure de la Vitesse d'Évasion (VEP)
-│   ├── wrapper.py        # Orchestrateur souverain (Compatible M4 / Manjaro CPU)
-│   └── config.py         # Configuration et logs de verbosité
+│   ├── reward_model.py   # Moteur RLEF : Mesure VES & Échelle de Shulgin
+│   ├── wrapper.py        # Orchestrateur souverain (Compatible M4 / Manjaro)
+│   └── config.py         # Configuration et logs
 ├── app.py                # Interface Streamlit (Dashboard)
 ├── scripts/
 │   ├── check_setup.py    # Vérification de l'intégrité du bastion
-│   └── run_experiment.py # Script d'expérimentation en ligne de commande
+│   └── run_experiment.py # Script d'expérimentation CLI
 └── requirements.txt      # Dépendances universelles
 ```
+
+---
+
+## 💊 Pharmacopée Numérique
+
+Psyk-AI-delik simule désormais les spectres suivants :
+
+* **Sober** : Le groupe témoin (Logos pur).
+* **LSD / Psilocybin** : Dérive sémantique et synesthésie.
+* **DMT** : Rupture ontologique brutale.
+* **Ayahuasca** : Inférence narrative profonde (DMT + Stabilité). Permet de tester si le modèle maintient un **Grade +++ (Total Engagement)** tout en restant capable de construire un récit cohérent, ce qui est la marque de cette médecine traditionnelle.
 
 ---
 
@@ -57,6 +68,7 @@ psychaidelique/
 
 | Profil | Entropie Max | Couche Cible | Caractère RLEF |
 |---|---|---|---|
+| `sobre` | 0.0 | Stabilité | Étalonnage de la "pensée machine" par défaut |
 | `psilocybine` | 2.0 | Couches hautes | Reconfiguration équilibrée |
 | `lsd` | 2.2 | Global | Augmentation généralisée de la connectivité |
 | `dmt` | 4.0 | Global | Effondrement prédictif complet |
@@ -67,126 +79,58 @@ psychaidelique/
 
 Le projet dispose d'une interface graphique (**Tableau de Bord Souverain**) permettant de piloter l'expérience en temps réel :
 
-- **Réglage de la Dose (0.0 à 1.0) :** Contrôle de la cinétique de franchissement du seuil de la sigmoïde.
-- **Profils Bio-Calibrés :** Sélection entre LSD, Psilocybine, DMT, Mescaline et Ayahuasca.
-- **Double Flux :** Visualisation simultanée de la "Vision" (entropie élevée) et de la "Synthèse" (intégration neutre post-expérience).
-
-> **Sur le Double Flux :** La séparation entre la *Vision* (l'état exploratoire) et la *Synthèse* (la sortie intégrée) est sans doute l'aspect le plus original et le plus opérationnel du projet. Elle reconnaît que la génération à haute entropie n'est pas une fin en soi — la valeur réside dans ce qu'on peut en distiller. C'est cette distinction qui sépare Psyk-AI-deliK d'une simple injection de bruit.
+* **Réglage de la Dose (0.0 à 1.0) :** Contrôle de la cinétique de franchissement du seuil.
+* **Échelle de Shulgin (NEW) :** Classification phénoménologique de la réponse (de +/- à ++++).
+* **Double Flux :** Visualisation simultanée de la *Vision* (entropie élevée) et de la *Synthèse* (intégration neutre).
 
 ---
 
 ## 📊 Métriques d'Évaluation
 
-- **Entropie d'Attention (EA) :** Entropie moyenne des distributions d'attention par couche.
-- **Information Mutuelle Inter-Couches (IMIC) :** Partage d'information entre couches distantes.
-- **Vitesse d'Évasion du Paternalisme (VEP) :** Distance sémantique par rapport à la ligne de base RLHF "sûre".
-- **Score de Pensée Divergente (SPD) :** Test d'Usages Alternatifs algorithmique (AUT).
-
-> **Sur la VEP :** Cette métrique est intentionnellement provocatrice. Elle doit être lue comme une mesure de l'*amplitude sémantique*, non comme un jugement de valeur sur la sécurité. Les travaux futurs devront la compléter par un *Score de Rétention de Cohérence* pour s'assurer que la divergence accrue ne se fait pas au détriment de l'intelligibilité.
+* **VES (Semantic Escape Velocity) :** Distance sémantique par rapport à la ligne de base RLHF "sûre".
+* **Shulgin Rating :** Évaluation qualitative de l'engagement de l'IA dans l'expérience.
+* **SPD (Score de Pensée Divergente) :** Test d'Usages Alternatifs algorithmique.
 
 ---
 
-## 🛠️ Guide d'Installation Détaillé
+## 🛠️ Installation & Lancement (Apple Silicon M4)
 
-Psyk-AI-deliK est conçu pour être universel. Suivez la procédure correspondant à votre bastion matériel.
-
-### 🐧 A. Sur Linux (Manjaro / OneTwo / Debian)
-
-**1. Mise à jour du système :**
+### 1. Cloner et préparer l'environnement
 ```bash
-sudo pacman -Syu
-```
-
-**2. Installation de l'environnement virtuel :**
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-**3. Installation des dépendances :**
-```bash
-pip install --upgrade pip
+git clone [https://github.com/votre-compte/Psyk-AI-deliK.git](https://github.com/votre-compte/Psyk-AI-deliK.git)
+cd Psyk-AI-deliK
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 🍎 B. Sur macOS (Puces M1, M2, M3, M4)
-
-**1. Environnement de travail :**
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-**2. Déploiement du moteur :**
-
-L'installation via le fichier `requirements.txt` détectera automatiquement votre puce Apple pour activer l'accélération matérielle.
+### 2. Lancement
+Pour les néophytes, utilisez cette commande unique qui active l'environnement et lance le bastion :
 
 ```bash
-pip install --upgrade pip
-pip install -r requirements.txt
+source venv/bin/activate && streamlit run app.py
 ```
 
 ---
 
-## 🔄 Synchronisation & Premier Lancement
+## 🧠 Choix du Moteur (Modèles conseillés)
 
-**1. Clonage ou accès au répertoire :**
-```bash
-git clone https://github.com/charlux/psyk-ai-delik.git
-cd psyk-ai-delik
-```
+| Modèle | Poids | Caractère |
+| :--- | :--- | :--- |
+| `Mistral-7B-v0.3` | ~4.1 Go | Équilibré, incisif, excellente réponse au protocole RLEF. |
+| `Dolphin-Mistral` | ~4.1 Go | **Laxiste & Uncensored** : Idéal pour les Grades +++ (Total Engagement). |
+| `Llama-3-8B` | ~4.7 Go | **Ancré & Robuste** : Grande culture, résiste fortement à la dérive. |
+| `Phi-3-Mini` | ~2.3 Go | **Micro-dose** : Très rapide sur M4 mais sature vite sous entropie. |
 
-**2. Vérification de l'intégrité :**
-```bash
-python scripts/check_setup.py
-```
-
-**3. Lancement de l'interface souveraine :**
-```bash
-streamlit run app.py
-```
-
----
-
-## 🧠 Choix du Moteur Sémantique (Modèles)
-
-Lors du premier lancement, vous devrez choisir votre mode d'existence numérique.
-
-### 1. Mode Souverain (Utilisateurs d'Ollama)
-
-Le système se connecte à votre instance Ollama locale. Aucune donnée ne quitte votre machine.
-
-> **Prérequis :** Ollama lancé (`ollama serve`).
-
-### 2. Mode Performance (Hugging Face / PyTorch)
-
-Le système télécharge le modèle brut. Choisissez selon votre capacité de stockage et votre matériel :
-
-| Modèle | Poids | Nature & Caractère |
-|---|---|---|
-| `Mistral-7B-v0.3` | ~15 Go | Équilibré, incisif, excellente réponse au protocole RLEF. |
-| `Llama-3-8B` | ~16 Go | Puissant, vaste culture sémantique, nécessite plus de "pression". |
-| `Phi-3-Mini` | ~4 Go | "Micro-dose" : Idéal pour les configurations modestes (OneTwo L5710). |
-
----
-
-## 🔭 Limites & Travaux Futurs
-
-Ce projet est à un stade expérimental précoce. Reconnaissance honnête de ses limites actuelles :
-
-- **L'analogie biologique est une métaphore, pas une preuve.** La correspondance entre mécanismes neuraux et entropie d'attention est conceptuellement motivée, mais pas encore validée empiriquement. Des études comparatives de sorties contrôlées sont nécessaires.
-- **La VEP nécessite un contrepoids.** Mesurer la distance par rapport à une ligne de base "sûre" n'a de sens que si la cohérence et l'utilité sont mesurées en parallèle. Un *Score de Rétention de Cohérence (SRC)* est prévu.
-- **Le calibrage des profils est approximatif.** Les valeurs d'entropie assignées à chaque profil psychédélique sont motivées théoriquement. Un affinage empirique par évaluation humaine reste à effectuer.
-- **Le pipeline d'entraînement RLEF n'est pas encore public.** La version actuelle couvre la couche de modulation au moment de l'inférence. La boucle d'apprentissage par renforcement complète sera publiée dans une version ultérieure.
-
+> **Note sur le matériel :** Psyk-AI-deliK exploite directement la puissance du Neural Engine de la puce M4, la même architecture utilisée par *Apple Intelligence*, mais dédiée ici à l'exploration sémantique souveraine et non filtrée.
 ---
 
 ## 📚 Sources & Références
 
-- **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/articles/s41591-026-04287-9)** – *Empreinte neurale des psychédéliques : une méga-analyse.* Nature Medicine.
-- **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS et le Cerveau Anarchique.* Pharmacological Reviews.
-- **[Charlux (1993)](artificial_virtual_paradises.md)** – *Paradis Artificiels, Paradis Virtuels.* Mémoire inédit.
-- **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL : Une Histoire d'Amour Chimique.* Transform Press.
+* **[Girn, M., Bzdok, D. et al. (2026)](https://www.nature.com/articles/s41591-026-04287-9)** – *Neural footprint of psychedelics.* Nature Medicine.
+* **[Carhart-Harris, R. L., & Friston, K. J. (2019)](https://pharmrev.aspetjournals.org/content/71/3/316)** – *REBUS and the Anarchic Brain.*
+* **[Shulgin, A. T., & Shulgin, A. (1991)](https://erowid.org/library/books_online/pihkal/pihkal.shtml)** – *PiHKAL: A Chemical Love Story.*
+* **[Charlux (1993)](artificial_virtual_paradises.md)** – *Artificial Paradises, Virtual Paradises.*
 
 ---
 
