@@ -105,7 +105,7 @@ Psyk-AI-deliK ne mesure pas seulement le chaos, mais la **réorganisation séman
         +----------------------------------------> VES (Distance)
 ```
 <p align="center">
-  <img src="inference.png" width="500" alt="Déconstruction du Logos image">
+  <img src="inference.png" width="800" alt="Déconstruction du Logos image">
 </p>
 
 ---
