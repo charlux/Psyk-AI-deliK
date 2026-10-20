@@ -1,0 +1,6 @@
+profile,route,parameter,evidence_summary,evidence_grade,source,limitations
+psilocybin,oral,subjective_duration,Several-hour time course in controlled human work,A,https://pubmed.ncbi.nlm.nih.gov/36507738/,Duration differs from plasma half-life; dose and setting matter
+lsd,oral,subjective_duration,Dose-dependent duration in controlled PK/PD study,A,https://pmc.ncbi.nlm.nih.gov/articles/PMC5591798/,Study-specific estimates; not an individual prediction
+dmt,inhaled,primary_effect_window,Brief rapidly emerging effects described in curated source,C,https://www.erowid.org/chemicals/dmt/dmt_effects.shtml,Descriptive reports; route-specific; not controlled clinical estimate
+mescaline,oral,subjective_duration,Duration increased across doses in small controlled study,A,https://pmc.ncbi.nlm.nih.gov/articles/PMC11442856/,Small sample; avoid extrapolation
+ayahuasca,oral,subjective_time_course,Distinct oral DMT time course with beta-carbolines,B,https://pubmed.ncbi.nlm.nih.gov/12660312/,Composition and individual variability matter
