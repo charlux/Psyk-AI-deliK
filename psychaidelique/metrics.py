@@ -78,6 +78,8 @@ def compute_clmi(
     Returns:
         Estimated mutual information in nats
     """
+    import numpy as np
+
     def _marginal_entropy(x: np.ndarray, bins: int) -> float:
         counts, _ = np.histogram(x, bins=bins, density=False)
         probs = counts / counts.sum()
@@ -104,6 +106,7 @@ def compute_clmi_matrix(
     layer_pairs: Optional[list[tuple[int, int]]] = None,
 ) -> dict:
     """Compute CLMI for a set of layer pairs (defaults to early↔late)."""
+    import numpy as np
     n = len(hidden_states)
     if layer_pairs is None:
         # Early ↔ late pairs as in Girn et al. cross-network connectivity
@@ -147,6 +150,8 @@ def compute_pev(
     Returns:
         dict with cosine_distance (0=identical, 2=opposite) and PEV score [0,1]
     """
+    import torch
+
     model = _get_sentence_model()
     emb = model.encode([psychedelic_text, baseline_text], convert_to_tensor=True)
     cos_sim = torch.nn.functional.cosine_similarity(emb[0].unsqueeze(0), emb[1].unsqueeze(0)).item()
@@ -175,6 +180,9 @@ def compute_dts(sentences: list[str]) -> dict:
     """
     if len(sentences) < 2:
         return {"mean_pairwise_distance": 0.0, "DTS": 0.0, "n_ideas": len(sentences)}
+
+    import numpy as np
+    import torch
 
     model = _get_sentence_model()
     embeddings = model.encode(sentences, convert_to_tensor=True)  # [n, dim]
@@ -220,6 +228,8 @@ def compute_crs(
     Returns:
         dict with perplexity and CRS
     """
+    import torch
+
     encodings = tokenizer(text, return_tensors="pt", truncation=True, max_length=max_length)
     input_ids = encodings.input_ids.to(model.device)
 
